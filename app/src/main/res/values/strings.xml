@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Easy PDF Reader</string>
+    <string name="menu_open">Open document</string>
+    <string name="menu_go_to_page">Go to page</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_share">Share</string>
+    <string name="empty_state_text">No document open. Tap the menu to open a PDF.</string>
+    <string name="error_loading_pdf">Failed to load PDF document.</string>
+    <string name="pdf_loaded_message">PDF loaded: %1$d pages</string>
+</resources>
