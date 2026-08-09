@@ -1,11 +1,15 @@
 package com.example.easy_pdf_reader
 
+import android.content.ClipData
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.text.InputType
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.ViewGroup
+import android.widget.FrameLayout
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
@@ -17,6 +21,9 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
 import androidx.pdf.ExperimentalPdfApi
 import com.example.easy_pdf_reader.databinding.ActivityMainBinding
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,37 +46,62 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // As per PDF viewer documentation for search UI
         WindowCompat.setDecorFitsSystemWindows(window, false)
-
         setSupportActionBar(binding.toolbar)
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.mainLayout) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             binding.toolbar.updatePadding(top = systemBars.top)
-            // We don't pad the bottom here because the PDF viewer handles its own insets for scroll/search
-            // But we should ensure the container doesn't overlap with navigation bar if needed.
-            // Actually, PdfViewerFragment handles insets for its search view.
+            // The PDF viewer fragment handles its own bottom insets for the search bar and content
             insets
         }
 
         if (savedInstanceState == null) {
-            updateEmptyState()
+            handleIntent(intent)
         } else {
-            // Restore fragment reference if it exists
+            currentDocumentUri = savedInstanceState.getParcelable(KEY_DOCUMENT_URI)
+            isDocumentUsable = savedInstanceState.getBoolean(KEY_IS_USABLE)
+            pageCount = savedInstanceState.getInt(KEY_PAGE_COUNT)
             pdfViewerFragment = supportFragmentManager.findFragmentByTag(PDF_FRAGMENT_TAG) as? MyPdfViewerFragment
             setupFragmentCallbacks()
+            updateUIState()
+        }
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        setIntent(intent)
+        handleIntent(intent)
+    }
+
+    private fun handleIntent(intent: Intent) {
+        if (intent.action == Intent.ACTION_VIEW) {
+            val uri = intent.data
+            val mimeType = intent.type ?: contentResolver.getType(uri ?: Uri.EMPTY)
+            
+            if (uri != null && (mimeType == "application/pdf" || uri.path?.lowercase()?.endsWith(".pdf") == true)) {
+                openPdf(uri)
+            } else if (uri != null) {
+                Toast.makeText(this, R.string.error_invalid_uri, Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            updateUIState()
         }
     }
 
     private fun openPdf(uri: Uri) {
+        showLoading(true)
         currentDocumentUri = uri
-        
-        // Persist permissions for the URI if possible
+        isDocumentUsable = false
+        invalidateOptionsMenu()
+
         try {
-            contentResolver.takePersistableUriPermission(uri, Intent.FLAG_GRANT_READ_URI_PERMISSION)
-        } catch (e: Exception) {
-            // Might fail if not a content provider or not supported, ignore for now
+            contentResolver.takePersistableUriPermission(
+                uri,
+                Intent.FLAG_GRANT_READ_URI_PERMISSION
+            )
+        } catch (e: SecurityException) {
+            // Not persistable, proceed with temporary permission
         }
 
         if (pdfViewerFragment == null) {
@@ -77,34 +109,48 @@ class MainActivity : AppCompatActivity() {
             setupFragmentCallbacks()
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container_view, pdfViewerFragment!!, PDF_FRAGMENT_TAG)
-                .commit()
+                .commitNow()
         }
 
         pdfViewerFragment?.documentUri = uri
-        updateEmptyState()
+        updateUIState()
     }
 
     @OptIn(ExperimentalPdfApi::class)
     private fun setupFragmentCallbacks() {
         pdfViewerFragment?.onLoadSuccess = { count ->
+            showLoading(false)
             isDocumentUsable = true
             pageCount = count
-            updateEmptyState()
+            updateUIState()
             invalidateOptionsMenu()
-            Toast.makeText(this, getString(R.string.pdf_loaded_message, count), Toast.LENGTH_SHORT).show()
         }
         pdfViewerFragment?.onLoadError = {
+            showLoading(false)
             isDocumentUsable = false
-            updateEmptyState()
+            updateUIState()
             invalidateOptionsMenu()
-            Toast.makeText(this, R.string.error_loading_pdf, Toast.LENGTH_SHORT).show()
+            MaterialAlertDialogBuilder(this)
+                .setTitle("Error")
+                .setMessage(R.string.error_loading_pdf)
+                .setPositiveButton("OK", null)
+                .show()
         }
     }
 
-    private fun updateEmptyState() {
+    private fun showLoading(loading: Boolean) {
+        binding.loadingIndicator.visibility = if (loading) View.VISIBLE else View.GONE
+        if (loading) {
+            binding.emptyStateText.visibility = View.GONE
+        }
+    }
+
+    private fun updateUIState() {
         val hasDocument = currentDocumentUri != null
-        binding.emptyStateText.visibility = if (hasDocument) View.GONE else View.VISIBLE
-        binding.fragmentContainerView.visibility = if (hasDocument) View.VISIBLE else View.GONE
+        val loading = binding.loadingIndicator.visibility == View.VISIBLE
+        
+        binding.emptyStateText.visibility = if (hasDocument || loading) View.GONE else View.VISIBLE
+        binding.fragmentContainerView.visibility = if (hasDocument && !loading) View.VISIBLE else View.GONE
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -142,40 +188,79 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showGoToPageDialog() {
-        val editText = android.widget.EditText(this).apply {
-            inputType = android.text.InputType.TYPE_CLASS_NUMBER
-            hint = "1 - $pageCount"
-        }
-        androidx.appcompat.app.AlertDialog.Builder(this)
+        val context = this
+        val layout = FrameLayout(context)
+        val params = FrameLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
+        val margin = (24 * resources.displayMetrics.density).toInt()
+        params.setMargins(margin, (8 * resources.displayMetrics.density).toInt(), margin, 0)
+        
+        val textInputLayout = TextInputLayout(context)
+        textInputLayout.layoutParams = params
+        textInputLayout.hint = getString(R.string.menu_go_to_page)
+        textInputLayout.helperText = "1 - $pageCount"
+        
+        val editText = TextInputEditText(context)
+        editText.inputType = InputType.TYPE_CLASS_NUMBER
+        textInputLayout.addView(editText)
+        layout.addView(textInputLayout)
+
+        val dialog = MaterialAlertDialogBuilder(context)
             .setTitle(R.string.menu_go_to_page)
-            .setView(editText)
-            .setPositiveButton("Go") { _, _ ->
-                val pageStr = editText.text.toString()
-                if (pageStr.isNotEmpty()) {
-                    val pageNum = pageStr.toIntOrNull()
-                    if (pageNum != null && pageNum in 1..pageCount) {
-                        pdfViewerFragment?.goToPage(pageNum - 1)
-                    } else {
-                        Toast.makeText(this, "Invalid page number", Toast.LENGTH_SHORT).show()
-                    }
+            .setView(layout)
+            .setPositiveButton("Go", null) // Set null to override listener for validation
+            .setNegativeButton("Cancel", null)
+            .create()
+
+        dialog.show()
+
+        dialog.getButton(androidx.appcompat.app.AlertDialog.BUTTON_POSITIVE).setOnClickListener {
+            val pageStr = editText.text.toString()
+            if (pageStr.isBlank()) {
+                textInputLayout.error = getString(R.string.error_invalid_page, pageCount)
+            } else {
+                val pageNum = pageStr.toIntOrNull()
+                if (pageNum != null && pageNum in 1..pageCount) {
+                    pdfViewerFragment?.goToPage(pageNum - 1)
+                    dialog.dismiss()
+                } else {
+                    textInputLayout.error = getString(R.string.error_invalid_page, pageCount)
                 }
             }
-            .setNegativeButton("Cancel", null)
-            .show()
+        }
     }
 
     private fun sharePdf() {
-        currentDocumentUri?.let { uri ->
-            val intent = Intent(Intent.ACTION_SEND).apply {
-                type = "application/pdf"
-                putExtra(Intent.EXTRA_STREAM, uri)
-                addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-            }
-            startActivity(Intent.createChooser(intent, getString(R.string.menu_share)))
+        val uri = currentDocumentUri ?: return
+        
+        val shareIntent = Intent(Intent.ACTION_SEND).apply {
+            type = "application/pdf"
+            putExtra(Intent.EXTRA_STREAM, uri)
+            clipData = ClipData.newRawUri(null, uri)
+            addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
         }
+
+        try {
+            val chooser = Intent.createChooser(shareIntent, getString(R.string.share_title))
+            startActivity(chooser)
+        } catch (e: Exception) {
+            Toast.makeText(this, R.string.error_no_share_target, Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putParcelable(KEY_DOCUMENT_URI, currentDocumentUri)
+        outState.putBoolean(KEY_IS_USABLE, isDocumentUsable)
+        outState.putInt(KEY_PAGE_COUNT, pageCount)
     }
 
     companion object {
         private const val PDF_FRAGMENT_TAG = "PDF_VIEWER"
+        private const val KEY_DOCUMENT_URI = "key_document_uri"
+        private const val KEY_IS_USABLE = "key_is_usable"
+        private const val KEY_PAGE_COUNT = "key_page_count"
     }
 }

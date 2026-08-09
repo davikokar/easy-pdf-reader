@@ -7,4 +7,9 @@
     <string name="empty_state_text">No document open. Tap the menu to open a PDF.</string>
     <string name="error_loading_pdf">Failed to load PDF document.</string>
     <string name="pdf_loaded_message">PDF loaded: %1$d pages</string>
+    <string name="error_invalid_page">Please enter a valid page number (1-%1$d).</string>
+    <string name="loading_document">Loading document…</string>
+    <string name="share_title">Share PDF</string>
+    <string name="error_no_share_target">No app found to share the PDF.</string>
+    <string name="error_invalid_uri">Cannot open the selected file.</string>
 </resources>

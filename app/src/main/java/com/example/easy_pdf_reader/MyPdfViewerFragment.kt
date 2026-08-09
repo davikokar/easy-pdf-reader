@@ -13,6 +13,7 @@ import androidx.pdf.view.PdfView
 class MyPdfViewerFragment : PdfViewerFragment() {
 
     private var internalPdfView: PdfView? = null
+    private var isViewReady = false
 
     var onLoadSuccess: ((pageCount: Int) -> Unit)? = null
     var onLoadError: ((Throwable) -> Unit)? = null
@@ -34,6 +35,7 @@ class MyPdfViewerFragment : PdfViewerFragment() {
         val spacingPx = (12 * resources.displayMetrics.density).toInt()
         pdfView.verticalPageSpacing = spacingPx
         
+        isViewReady = true
         Log.d(TAG, "PdfView configured: pagesPerRow=1, verticalPageSpacing=$spacingPx")
     }
 
@@ -50,8 +52,23 @@ class MyPdfViewerFragment : PdfViewerFragment() {
         onLoadError?.invoke(error)
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        internalPdfView = null
+        isViewReady = false
+    }
+
     fun goToPage(pageNumber: Int) {
-        internalPdfView?.scrollToPage(pageNumber)
+        val view = internalPdfView
+        if (isViewReady && view != null) {
+            try {
+                view.scrollToPage(pageNumber)
+            } catch (e: Exception) {
+                Log.e(TAG, "Failed to scroll to page $pageNumber", e)
+            }
+        } else {
+            Log.w(TAG, "Attempted to scroll before PdfView was ready")
+        }
     }
 
     companion object {
