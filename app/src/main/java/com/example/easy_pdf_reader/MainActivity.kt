@@ -52,7 +52,9 @@ class MainActivity : AppCompatActivity() {
         ViewCompat.setOnApplyWindowInsetsListener(binding.mainLayout) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             binding.toolbar.updatePadding(top = systemBars.top)
-            // The PDF viewer fragment handles its own bottom insets for the search bar and content
+            // Pad the container bottom to ensure the PDF viewer's bottom buttons (e.g. edit FAB)
+            // are not obscured by the system navigation bar.
+            binding.fragmentContainerView.updatePadding(bottom = systemBars.bottom)
             insets
         }
 
