@@ -4,10 +4,9 @@ plugins {
 
 android {
     namespace = "com.example.easy_pdf_reader"
-    compileSdk = 37
+    compileSdk = 36
 
     // Explicitly set the SDK extension level as required by androidx.pdf
-    compileSdkExtension = 19
 
     defaultConfig {
         applicationId = "com.example.easy_pdf_reader"
@@ -33,6 +32,7 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    compileSdkMinor = 1
 }
 
 dependencies {
