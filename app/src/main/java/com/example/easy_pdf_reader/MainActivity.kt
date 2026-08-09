@@ -58,6 +58,10 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        binding.emptyStateText.setOnClickListener {
+            openDocumentLauncher.launch(arrayOf("application/pdf"))
+        }
+
         if (savedInstanceState == null) {
             handleIntent(intent)
         } else {
@@ -118,6 +122,18 @@ class MainActivity : AppCompatActivity() {
         updateUIState()
     }
 
+    private fun closePdf() {
+        currentDocumentUri = null
+        isDocumentUsable = false
+        pageCount = 0
+        pdfViewerFragment?.let {
+            supportFragmentManager.beginTransaction().remove(it).commitNow()
+            pdfViewerFragment = null
+        }
+        updateUIState()
+        invalidateOptionsMenu()
+    }
+
     @OptIn(ExperimentalPdfApi::class)
     private fun setupFragmentCallbacks() {
         pdfViewerFragment?.onLoadSuccess = { count ->
@@ -161,6 +177,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onPrepareOptionsMenu(menu: Menu): Boolean {
+        val openItem = menu.findItem(R.id.action_open)
+        if (currentDocumentUri != null) {
+            openItem.title = getString(R.string.menu_close)
+        } else {
+            openItem.title = getString(R.string.menu_open)
+        }
+
         menu.findItem(R.id.action_go_to_page)?.isEnabled = isDocumentUsable
         menu.findItem(R.id.action_search)?.isEnabled = isDocumentUsable
         menu.findItem(R.id.action_share)?.isEnabled = isDocumentUsable
@@ -170,7 +193,11 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_open -> {
-                openDocumentLauncher.launch(arrayOf("application/pdf"))
+                if (currentDocumentUri != null) {
+                    closePdf()
+                } else {
+                    openDocumentLauncher.launch(arrayOf("application/pdf"))
+                }
                 true
             }
             R.id.action_search -> {

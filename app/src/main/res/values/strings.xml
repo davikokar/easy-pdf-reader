@@ -4,7 +4,8 @@
     <string name="menu_go_to_page">Go to page</string>
     <string name="menu_search">Search</string>
     <string name="menu_share">Share</string>
-    <string name="empty_state_text">No document open. Tap the menu to open a PDF.</string>
+    <string name="menu_close">Close document</string>
+    <string name="empty_state_text">No document open. Tap here or use the menu to open a PDF.</string>
     <string name="error_loading_pdf">Failed to load PDF document.</string>
     <string name="pdf_loaded_message">PDF loaded: %1$d pages</string>
     <string name="error_invalid_page">Please enter a valid page number (1-%1$d).</string>
