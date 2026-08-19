@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Easy PDF Reader</string>
+    <string name="menu_open">ドキュメントを開く</string>
+    <string name="menu_go_to_page">ページに移動</string>
+    <string name="menu_search">検索</string>
+    <string name="menu_share">共有</string>
+    <string name="menu_close">ドキュメントを閉じる</string>
+    <string name="empty_state_text">ドキュメントが開かれていません。ここをタップするか、メニューからPDFを開いてください。</string>
+    <string name="error_loading_pdf">PDFドキュメントを読み込めませんでした。</string>
+    <string name="pdf_loaded_message">PDFを読み込みました: %1$dページ</string>
+    <string name="error_invalid_page">有効なページ番号を入力してください (1-%1$d)。</string>
+    <string name="loading_document">ドキュメントを読み込み中…</string>
+    <string name="share_title">PDFを共有</string>
+    <string name="error_no_share_target">PDFを共有できるアプリが見つかりません。</string>
+    <string name="error_invalid_uri">選択したファイルを開けません。</string>
+    <string name="error_title">エラー</string>
+    <string name="action_ok">OK</string>
+    <string name="action_go">移動</string>
+    <string name="action_cancel">キャンセル</string>
+</resources>

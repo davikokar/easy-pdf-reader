@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Easy PDF Reader</string>
+    <string name="menu_open">打开文档</string>
+    <string name="menu_go_to_page">跳转到页面</string>
+    <string name="menu_search">搜索</string>
+    <string name="menu_share">分享</string>
+    <string name="menu_close">关闭文档</string>
+    <string name="empty_state_text">未打开文档。点击此处或使用菜单打开 PDF。</string>
+    <string name="error_loading_pdf">无法加载 PDF 文档。</string>
+    <string name="pdf_loaded_message">PDF 已加载：%1$d 页</string>
+    <string name="error_invalid_page">请输入有效的页码（1-%1$d）。</string>
+    <string name="loading_document">正在加载文档…</string>
+    <string name="share_title">分享 PDF</string>
+    <string name="error_no_share_target">找不到可分享 PDF 的应用。</string>
+    <string name="error_invalid_uri">无法打开所选文件。</string>
+    <string name="error_title">错误</string>
+    <string name="action_ok">确定</string>
+    <string name="action_go">跳转</string>
+    <string name="action_cancel">取消</string>
+</resources>

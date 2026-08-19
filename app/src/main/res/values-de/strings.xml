@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Easy PDF Reader</string>
+    <string name="menu_open">Dokument öffnen</string>
+    <string name="menu_go_to_page">Zu Seite wechseln</string>
+    <string name="menu_search">Suchen</string>
+    <string name="menu_share">Teilen</string>
+    <string name="menu_close">Dokument schließen</string>
+    <string name="empty_state_text">Kein Dokument geöffnet. Tippen Sie hier oder verwenden Sie das Menü, um eine PDF-Datei zu öffnen.</string>
+    <string name="error_loading_pdf">PDF-Dokument konnte nicht geladen werden.</string>
+    <string name="pdf_loaded_message">PDF geladen: %1$d Seiten</string>
+    <string name="error_invalid_page">Geben Sie eine gültige Seitenzahl ein (1-%1$d).</string>
+    <string name="loading_document">Dokument wird geladen…</string>
+    <string name="share_title">PDF teilen</string>
+    <string name="error_no_share_target">Keine App zum Teilen der PDF-Datei gefunden.</string>
+    <string name="error_invalid_uri">Die ausgewählte Datei kann nicht geöffnet werden.</string>
+    <string name="error_title">Fehler</string>
+    <string name="action_ok">OK</string>
+    <string name="action_go">Los</string>
+    <string name="action_cancel">Abbrechen</string>
+</resources>
