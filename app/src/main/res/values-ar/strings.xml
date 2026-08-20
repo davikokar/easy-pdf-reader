@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Easy PDF Reader</string>
+    <string name="menu_open">فتح المستند</string>
+    <string name="menu_go_to_page">الانتقال إلى الصفحة</string>
+    <string name="menu_search">بحث</string>
+    <string name="menu_share">مشاركة</string>
+    <string name="menu_close">إغلاق المستند</string>
+    <string name="empty_state_text">لا يوجد مستند مفتوح. اضغط هنا أو استخدم القائمة لفتح ملف PDF.</string>
+    <string name="error_loading_pdf">تعذر تحميل مستند PDF.</string>
+    <string name="pdf_loaded_message">تم تحميل PDF: %1$d صفحات</string>
+    <string name="error_invalid_page">يرجى إدخال رقم صفحة صالح (1-%1$d).</string>
+    <string name="loading_document">جارٍ تحميل المستند…</string>
+    <string name="share_title">مشاركة PDF</string>
+    <string name="error_no_share_target">لم يتم العثور على تطبيق لمشاركة ملف PDF.</string>
+    <string name="error_invalid_uri">تعذر فتح الملف المحدد.</string>
+    <string name="error_title">خطأ</string>
+    <string name="action_ok">موافق</string>
+    <string name="action_go">انتقال</string>
+    <string name="action_cancel">إلغاء</string>
+</resources>

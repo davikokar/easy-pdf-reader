@@ -13,4 +13,8 @@
     <string name="share_title">Share PDF</string>
     <string name="error_no_share_target">No app found to share the PDF.</string>
     <string name="error_invalid_uri">Cannot open the selected file.</string>
+    <string name="error_title">Error</string>
+    <string name="action_ok">OK</string>
+    <string name="action_go">Go</string>
+    <string name="action_cancel">Cancel</string>
 </resources>

@@ -149,9 +149,9 @@ class MainActivity : AppCompatActivity() {
             updateUIState()
             invalidateOptionsMenu()
             MaterialAlertDialogBuilder(this)
-                .setTitle("Error")
+                .setTitle(R.string.error_title)
                 .setMessage(R.string.error_loading_pdf)
-                .setPositiveButton("OK", null)
+                .setPositiveButton(R.string.action_ok, null)
                 .show()
         }
     }
@@ -239,8 +239,8 @@ class MainActivity : AppCompatActivity() {
         val dialog = MaterialAlertDialogBuilder(context)
             .setTitle(R.string.menu_go_to_page)
             .setView(layout)
-            .setPositiveButton("Go", null) // Set null to override listener for validation
-            .setNegativeButton("Cancel", null)
+            .setPositiveButton(R.string.action_go, null) // Set null to override listener for validation
+            .setNegativeButton(R.string.action_cancel, null)
             .create()
 
         dialog.show()

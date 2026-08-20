@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Easy PDF Reader</string>
+    <string name="menu_open">문서 열기</string>
+    <string name="menu_go_to_page">페이지로 이동</string>
+    <string name="menu_search">검색</string>
+    <string name="menu_share">공유</string>
+    <string name="menu_close">문서 닫기</string>
+    <string name="empty_state_text">열린 문서가 없습니다. 여기를 탭하거나 메뉴에서 PDF를 여세요.</string>
+    <string name="error_loading_pdf">PDF 문서를 불러오지 못했습니다.</string>
+    <string name="pdf_loaded_message">PDF 로드 완료: %1$d페이지</string>
+    <string name="error_invalid_page">올바른 페이지 번호를 입력하세요 (1-%1$d).</string>
+    <string name="loading_document">문서를 불러오는 중…</string>
+    <string name="share_title">PDF 공유</string>
+    <string name="error_no_share_target">PDF를 공유할 앱을 찾을 수 없습니다.</string>
+    <string name="error_invalid_uri">선택한 파일을 열 수 없습니다.</string>
+    <string name="error_title">오류</string>
+    <string name="action_ok">확인</string>
+    <string name="action_go">이동</string>
+    <string name="action_cancel">취소</string>
+</resources>
