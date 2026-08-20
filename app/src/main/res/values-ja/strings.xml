@@ -17,4 +17,25 @@
     <string name="action_ok">OK</string>
     <string name="action_go">移動</string>
     <string name="action_cancel">キャンセル</string>
+    <string name="cd_back">戻る</string>
+    <string name="support_email_subject">Easy PDF Reader サポートリクエスト</string>
+    <string name="error_no_email_app">メールアプリが見つかりません</string>
+    <string name="menu_settings">設定</string>
+    <string name="settings_title">設定</string>
+    <string name="settings_general">一般</string>
+    <string name="settings_change_language">言語を変更</string>
+    <string name="language_system_default">システムのデフォルト</string>
+    <string name="settings_app">アプリ</string>
+    <string name="settings_share_app">アプリを共有</string>
+    <string name="share_app_text">Easy PDF Reader をチェックしてみてください: https://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="settings_rate_app">アプリを評価</string>
+    <string name="settings_customer_support">カスタマーサポート</string>
+    <string name="settings_about">このアプリについて</string>
+    <string name="about_version">バージョン %1$s</string>
+    <string name="settings_community_support">コミュニティとサポート</string>
+    <string name="settings_buy_coffee">コーヒーを奢る</string>
+    <string name="billing_thanks">応援していただき、本当にありがとうございます！ ☕</string>
+    <string name="settings_legal">法的情報</string>
+    <string name="settings_privacy">プライバシーとポリシー</string>
+    <string name="settings_terms">利用規約</string>
 </resources>

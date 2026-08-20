@@ -2,6 +2,7 @@ package com.example.easy_pdf_reader
 
 import android.graphics.Color
 import android.content.ClipData
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -41,6 +42,10 @@ class MainActivity : AppCompatActivity() {
     private var currentDocumentUri: Uri? = null
     private var isDocumentUsable = false
     private var pageCount = 0
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(LocaleHelper.wrap(newBase))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -214,6 +219,10 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.action_share -> {
                 sharePdf()
+                true
+            }
+            R.id.action_settings -> {
+                startActivity(Intent(this, SettingsActivity::class.java))
                 true
             }
             else -> super.onOptionsItemSelected(item)

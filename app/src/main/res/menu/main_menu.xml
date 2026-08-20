@@ -20,4 +20,8 @@
         android:enabled="false"
         android:title="@string/menu_share"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_settings"
+        android:title="@string/menu_settings"
+        app:showAsAction="never" />
 </menu>
