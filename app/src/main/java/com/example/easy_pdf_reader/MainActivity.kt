@@ -2,7 +2,6 @@ package com.example.easy_pdf_reader
 
 import android.graphics.Color
 import android.content.ClipData
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -28,7 +27,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : LocaleAwareActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private var pdfViewerFragment: MyPdfViewerFragment? = null
@@ -42,10 +41,6 @@ class MainActivity : AppCompatActivity() {
     private var currentDocumentUri: Uri? = null
     private var isDocumentUsable = false
     private var pageCount = 0
-
-    override fun attachBaseContext(newBase: Context) {
-        super.attachBaseContext(LocaleHelper.wrap(newBase))
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

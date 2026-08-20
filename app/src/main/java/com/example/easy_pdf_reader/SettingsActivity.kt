@@ -1,24 +1,18 @@
 package com.example.easy_pdf_reader
 
 import android.content.Intent
-import android.content.Context
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import com.example.easy_pdf_reader.databinding.ActivitySettingsBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.util.Locale
 
-class SettingsActivity : AppCompatActivity() {
+class SettingsActivity : LocaleAwareActivity() {
 
     private lateinit var binding: ActivitySettingsBinding
     private var billingHelper: BillingHelper? = null
-
-    override fun attachBaseContext(newBase: Context) {
-        super.attachBaseContext(LocaleHelper.wrap(newBase))
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
