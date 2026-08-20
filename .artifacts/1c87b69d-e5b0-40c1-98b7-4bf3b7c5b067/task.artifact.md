@@ -1,0 +1,5 @@
+- [x] Update `MainActivity.kt` to force white status bar icons
+    - [x] Add imports for `SystemBarStyle` and `Color`
+    - [x] Update `enableEdgeToEdge()` call
+- [x] Verify build
+- [ ] Manual verification (by user)
