@@ -17,4 +17,25 @@
     <string name="action_ok">موافق</string>
     <string name="action_go">انتقال</string>
     <string name="action_cancel">إلغاء</string>
+    <string name="cd_back">رجوع</string>
+    <string name="support_email_subject">طلب دعم Easy PDF Reader</string>
+    <string name="error_no_email_app">لم يتم العثور على تطبيق بريد إلكتروني</string>
+    <string name="menu_settings">الإعدادات</string>
+    <string name="settings_title">الإعدادات</string>
+    <string name="settings_general">عام</string>
+    <string name="settings_change_language">تغيير اللغة</string>
+    <string name="language_system_default">إعداد النظام الافتراضي</string>
+    <string name="settings_app">التطبيق</string>
+    <string name="settings_share_app">مشاركة التطبيق</string>
+    <string name="share_app_text">تحقق من تطبيق Easy PDF Reader: https://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="settings_rate_app">تقييم التطبيق</string>
+    <string name="settings_customer_support">دعم العملاء</string>
+    <string name="settings_about">حول</string>
+    <string name="about_version">الإصدار %1$s</string>
+    <string name="settings_community_support">المجتمع والدعم</string>
+    <string name="settings_buy_coffee">اشترِ لي قهوة</string>
+    <string name="billing_thanks">شكراً جزيلاً على دعمك! ☕</string>
+    <string name="settings_legal">قانوني</string>
+    <string name="settings_privacy">الخصوصية والسياسة</string>
+    <string name="settings_terms">الشروط</string>
 </resources>

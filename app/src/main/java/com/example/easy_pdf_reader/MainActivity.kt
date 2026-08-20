@@ -27,7 +27,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : LocaleAwareActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private var pdfViewerFragment: MyPdfViewerFragment? = null
@@ -214,6 +214,10 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.action_share -> {
                 sharePdf()
+                true
+            }
+            R.id.action_settings -> {
+                startActivity(Intent(this, SettingsActivity::class.java))
                 true
             }
             else -> super.onOptionsItemSelected(item)

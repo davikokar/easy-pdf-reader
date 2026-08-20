@@ -17,4 +17,25 @@
     <string name="action_ok">确定</string>
     <string name="action_go">跳转</string>
     <string name="action_cancel">取消</string>
+    <string name="cd_back">返回</string>
+    <string name="support_email_subject">Easy PDF Reader 支持请求</string>
+    <string name="error_no_email_app">找不到邮件应用</string>
+    <string name="menu_settings">设置</string>
+    <string name="settings_title">设置</string>
+    <string name="settings_general">通用</string>
+    <string name="settings_change_language">更改语言</string>
+    <string name="language_system_default">系统默认</string>
+    <string name="settings_app">应用</string>
+    <string name="settings_share_app">分享应用</string>
+    <string name="share_app_text">看看这款 Easy PDF Reader：https://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="settings_rate_app">给应用评分</string>
+    <string name="settings_customer_support">客户支持</string>
+    <string name="settings_about">关于</string>
+    <string name="about_version">版本 %1$s</string>
+    <string name="settings_community_support">社区与支持</string>
+    <string name="settings_buy_coffee">请我喝杯咖啡</string>
+    <string name="billing_thanks">非常感谢您的支持！ ☕</string>
+    <string name="settings_legal">法律</string>
+    <string name="settings_privacy">隐私与政策</string>
+    <string name="settings_terms">条款</string>
 </resources>
