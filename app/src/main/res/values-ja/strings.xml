@@ -35,6 +35,7 @@
     <string name="settings_community_support">コミュニティとサポート</string>
     <string name="settings_buy_coffee">コーヒーを奢る</string>
     <string name="billing_thanks">応援していただき、本当にありがとうございます！ ☕</string>
+    <string name="billing_unavailable">現在、購入は利用できません。しばらくしてからもう一度お試しください。</string>
     <string name="settings_legal">法的情報</string>
     <string name="settings_privacy">プライバシーとポリシー</string>
     <string name="settings_terms">利用規約</string>

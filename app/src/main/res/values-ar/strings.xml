@@ -35,6 +35,7 @@
     <string name="settings_community_support">المجتمع والدعم</string>
     <string name="settings_buy_coffee">اشترِ لي قهوة</string>
     <string name="billing_thanks">شكراً جزيلاً على دعمك! ☕</string>
+    <string name="billing_unavailable">عمليات الشراء غير متاحة حالياً. يرجى المحاولة لاحقاً.</string>
     <string name="settings_legal">قانوني</string>
     <string name="settings_privacy">الخصوصية والسياسة</string>
     <string name="settings_terms">الشروط</string>
