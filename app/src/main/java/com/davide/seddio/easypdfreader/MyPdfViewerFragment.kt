@@ -1,4 +1,4 @@
-package com.example.easy_pdf_reader
+package com.davide.seddio.easypdfreader
 
 import android.os.Bundle
 import android.util.Log

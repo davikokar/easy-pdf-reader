@@ -1,4 +1,4 @@
-package com.example.easy_pdf_reader
+package com.davide.seddio.easypdfreader
 
 import android.graphics.Color
 import android.content.ClipData
@@ -22,7 +22,7 @@ import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updatePadding
 import androidx.pdf.ExperimentalPdfApi
-import com.example.easy_pdf_reader.databinding.ActivityMainBinding
+import com.davide.seddio.easypdfreader.databinding.ActivityMainBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout

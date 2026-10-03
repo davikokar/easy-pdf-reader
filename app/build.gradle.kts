@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    namespace = "com.example.easy_pdf_reader"
+    namespace = "com.davide.seddio.easypdfreader"
     compileSdk = 36
 
     // Explicitly set the SDK extension level as required by androidx.pdf
 
     defaultConfig {
-        applicationId = "com.example.easy_pdf_reader"
+        applicationId = "com.davide.seddio.easypdfreader"
         minSdk = 28
         targetSdk = 37
         versionCode = 1

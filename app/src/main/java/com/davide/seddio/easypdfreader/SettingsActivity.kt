@@ -1,11 +1,11 @@
-package com.example.easy_pdf_reader
+package com.davide.seddio.easypdfreader
 
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
-import com.example.easy_pdf_reader.databinding.ActivitySettingsBinding
+import com.davide.seddio.easypdfreader.databinding.ActivitySettingsBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import java.util.Locale
 
