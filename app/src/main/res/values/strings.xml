@@ -36,6 +36,7 @@
     <string name="settings_community_support">Community &amp; Support</string>
     <string name="settings_buy_coffee">Buy me a coffee</string>
     <string name="billing_thanks">Thank you so much for your support! ☕</string>
+    <string name="billing_unavailable">Purchases are not available right now. Please try again later.</string>
     <string name="settings_legal">Legal</string>
     <string name="settings_privacy">Privacy &amp; Policy</string>
     <string name="settings_terms">Terms</string>

@@ -11,7 +11,7 @@ pdfViewer = "1.0.0-alpha19"
 fragmentKtx = "1.8.2"
 activityKtx = "1.9.1"
 kotlin = "2.1.0"
-billing = "7.0.0"
+billing = "9.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
