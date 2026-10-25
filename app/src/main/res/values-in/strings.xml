@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Easy PDF Reader</string>
+    <string name="menu_open">Buka dokumen</string>
+    <string name="menu_go_to_page">Buka halaman</string>
+    <string name="menu_search">Cari</string>
+    <string name="menu_share">Bagikan</string>
+    <string name="menu_close">Tutup dokumen</string>
+    <string name="empty_state_text">Tidak ada dokumen yang dibuka. Ketuk di sini atau gunakan menu untuk membuka PDF.</string>
+    <string name="error_loading_pdf">Gagal memuat dokumen PDF.</string>
+    <string name="pdf_loaded_message">PDF dimuat: %1$d halaman</string>
+    <string name="error_invalid_page">Masukkan nomor halaman yang valid (1-%1$d).</string>
+    <string name="loading_document">Memuat dokumen…</string>
+    <string name="share_title">Bagikan PDF</string>
+    <string name="error_no_share_target">Tidak ada aplikasi untuk membagikan PDF.</string>
+    <string name="error_invalid_uri">Tidak dapat membuka file yang dipilih.</string>
+    <string name="error_title">Kesalahan</string>
+    <string name="action_ok">OK</string>
+    <string name="action_go">Buka</string>
+    <string name="action_cancel">Batal</string>
+    <string name="cd_back">Kembali</string>
+    <string name="support_email_subject">Permintaan dukungan Easy PDF Reader</string>
+    <string name="error_no_email_app">Aplikasi email tidak ditemukan</string>
+    <string name="menu_settings">Pengaturan</string>
+    <string name="settings_title">Pengaturan</string>
+    <string name="settings_general">Umum</string>
+    <string name="settings_change_language">Ubah bahasa</string>
+    <string name="language_system_default">Default sistem</string>
+    <string name="settings_app">Aplikasi</string>
+    <string name="settings_share_app">Bagikan aplikasi</string>
+    <string name="share_app_text">Lihat Easy PDF Reader: https://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="settings_rate_app">Beri nilai aplikasi</string>
+    <string name="settings_customer_support">Dukungan Pelanggan</string>
+    <string name="settings_about">Tentang</string>
+    <string name="about_version">Versi %1$s</string>
+    <string name="settings_community_support">Komunitas &amp; Dukungan</string>
+    <string name="settings_buy_coffee">Traktir saya kopi</string>
+    <string name="billing_thanks">Terima kasih banyak atas dukungan Anda! ☕</string>
+    <string name="billing_unavailable">Pembelian tidak tersedia saat ini. Silakan coba lagi nanti.</string>
+    <string name="settings_legal">Hukum</string>
+    <string name="settings_privacy">Privasi &amp; Kebijakan</string>
+    <string name="settings_terms">Ketentuan</string>
+</resources>

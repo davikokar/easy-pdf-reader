@@ -5,8 +5,14 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.SystemBarStyle
+import androidx.activity.enableEdgeToEdge
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.updatePadding
 import com.davide.seddio.easypdfreader.databinding.ActivitySettingsBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import java.text.Collator
 import java.util.Locale
 
 class SettingsActivity : LocaleAwareActivity() {
@@ -16,8 +22,16 @@ class SettingsActivity : LocaleAwareActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge(statusBarStyle = SystemBarStyle.dark(android.graphics.Color.TRANSPARENT))
         binding = ActivitySettingsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.settingsRoot) { _, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            binding.toolbar.updatePadding(top = systemBars.top)
+            binding.scrollView.updatePadding(bottom = systemBars.bottom)
+            insets
+        }
 
         binding.toolbar.setNavigationOnClickListener { finish() }
 
@@ -45,15 +59,13 @@ class SettingsActivity : LocaleAwareActivity() {
     private fun showLanguageDialog() {
         val currentTag = LocaleHelper.getPersistedLanguageTag(this)
         // "" represents "follow the system language".
-        val tags = listOf("") + LocaleHelper.supportedLanguageTags
-        val labels = tags.map { tag ->
-            if (tag.isEmpty()) {
-                getString(R.string.language_system_default)
-            } else {
-                val locale = Locale.forLanguageTag(tag)
-                locale.getDisplayName(locale).replaceFirstChar { it.uppercase(locale) }
-            }
-        }.toTypedArray()
+        val languages = LocaleHelper.supportedLanguageTags.map { tag ->
+            val locale = Locale.forLanguageTag(tag)
+            tag to locale.getDisplayName(locale).replaceFirstChar { it.uppercase(locale) }
+        }.sortedWith(compareBy(Collator.getInstance()) { it.second })
+        val tags = listOf("") + languages.map { it.first }
+        val labels = (listOf(getString(R.string.language_system_default)) + languages.map { it.second })
+            .toTypedArray()
         var selectedIndex = tags.indexOf(currentTag).coerceAtLeast(0)
 
         MaterialAlertDialogBuilder(this)

@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Easy PDF Reader</string>
+    <string name="menu_open">เปิดเอกสาร</string>
+    <string name="menu_go_to_page">ไปที่หน้า</string>
+    <string name="menu_search">ค้นหา</string>
+    <string name="menu_share">แชร์</string>
+    <string name="menu_close">ปิดเอกสาร</string>
+    <string name="empty_state_text">ไม่มีเอกสารที่เปิดอยู่ แตะที่นี่หรือใช้เมนูเพื่อเปิดไฟล์ PDF</string>
+    <string name="error_loading_pdf">ไม่สามารถโหลดเอกสาร PDF ได้</string>
+    <string name="pdf_loaded_message">โหลด PDF แล้ว: %1$d หน้า</string>
+    <string name="error_invalid_page">โปรดป้อนหมายเลขหน้าที่ถูกต้อง (1-%1$d)</string>
+    <string name="loading_document">กำลังโหลดเอกสาร…</string>
+    <string name="share_title">แชร์ PDF</string>
+    <string name="error_no_share_target">ไม่พบแอปสำหรับแชร์ PDF</string>
+    <string name="error_invalid_uri">ไม่สามารถเปิดไฟล์ที่เลือกได้</string>
+    <string name="error_title">ข้อผิดพลาด</string>
+    <string name="action_ok">ตกลง</string>
+    <string name="action_go">ไป</string>
+    <string name="action_cancel">ยกเลิก</string>
+    <string name="cd_back">กลับ</string>
+    <string name="support_email_subject">คำขอรับการสนับสนุน Easy PDF Reader</string>
+    <string name="error_no_email_app">ไม่พบแอปอีเมล</string>
+    <string name="menu_settings">การตั้งค่า</string>
+    <string name="settings_title">การตั้งค่า</string>
+    <string name="settings_general">ทั่วไป</string>
+    <string name="settings_change_language">เปลี่ยนภาษา</string>
+    <string name="language_system_default">ค่าเริ่มต้นของระบบ</string>
+    <string name="settings_app">แอป</string>
+    <string name="settings_share_app">แชร์แอป</string>
+    <string name="share_app_text">ลองใช้ Easy PDF Reader: https://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="settings_rate_app">ให้คะแนนแอป</string>
+    <string name="settings_customer_support">ฝ่ายสนับสนุนลูกค้า</string>
+    <string name="settings_about">เกี่ยวกับ</string>
+    <string name="about_version">เวอร์ชัน %1$s</string>
+    <string name="settings_community_support">ชุมชนและการสนับสนุน</string>
+    <string name="settings_buy_coffee">เลี้ยงกาแฟฉันหน่อย</string>
+    <string name="billing_thanks">ขอบคุณมากสำหรับการสนับสนุน! ☕</string>
+    <string name="billing_unavailable">ขณะนี้ไม่สามารถซื้อได้ โปรดลองอีกครั้งในภายหลัง</string>
+    <string name="settings_legal">ข้อกฎหมาย</string>
+    <string name="settings_privacy">ความเป็นส่วนตัวและนโยบาย</string>
+    <string name="settings_terms">ข้อกำหนด</string>
+</resources>

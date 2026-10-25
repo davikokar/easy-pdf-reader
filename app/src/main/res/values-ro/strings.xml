@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Easy PDF Reader</string>
+    <string name="menu_open">Deschide document</string>
+    <string name="menu_go_to_page">Mergi la pagina</string>
+    <string name="menu_search">Caută</string>
+    <string name="menu_share">Distribuie</string>
+    <string name="menu_close">Închide documentul</string>
+    <string name="empty_state_text">Niciun document deschis. Atinge aici sau folosește meniul pentru a deschide un PDF.</string>
+    <string name="error_loading_pdf">Documentul PDF nu a putut fi încărcat.</string>
+    <string name="pdf_loaded_message">PDF încărcat: %1$d pagini</string>
+    <string name="error_invalid_page">Introdu un număr de pagină valid (1-%1$d).</string>
+    <string name="loading_document">Se încarcă documentul…</string>
+    <string name="share_title">Distribuie PDF</string>
+    <string name="error_no_share_target">Nu s-a găsit nicio aplicație pentru distribuirea PDF-ului.</string>
+    <string name="error_invalid_uri">Fișierul selectat nu poate fi deschis.</string>
+    <string name="error_title">Eroare</string>
+    <string name="action_ok">OK</string>
+    <string name="action_go">Mergi</string>
+    <string name="action_cancel">Anulează</string>
+    <string name="cd_back">Înapoi</string>
+    <string name="support_email_subject">Solicitare de asistență Easy PDF Reader</string>
+    <string name="error_no_email_app">Nu s-a găsit nicio aplicație de e-mail</string>
+    <string name="menu_settings">Setări</string>
+    <string name="settings_title">Setări</string>
+    <string name="settings_general">General</string>
+    <string name="settings_change_language">Schimbă limba</string>
+    <string name="language_system_default">Implicit sistem</string>
+    <string name="settings_app">Aplicație</string>
+    <string name="settings_share_app">Distribuie aplicația</string>
+    <string name="share_app_text">Încearcă Easy PDF Reader: https://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="settings_rate_app">Evaluează aplicația</string>
+    <string name="settings_customer_support">Asistență clienți</string>
+    <string name="settings_about">Despre</string>
+    <string name="about_version">Versiunea %1$s</string>
+    <string name="settings_community_support">Comunitate &amp; Asistență</string>
+    <string name="settings_buy_coffee">Cumpără-mi o cafea</string>
+    <string name="billing_thanks">Mulțumesc mult pentru sprijin! ☕</string>
+    <string name="billing_unavailable">Achizițiile nu sunt disponibile momentan. Încearcă din nou mai târziu.</string>
+    <string name="settings_legal">Aspecte juridice</string>
+    <string name="settings_privacy">Confidențialitate &amp; Politică</string>
+    <string name="settings_terms">Termeni</string>
+</resources>

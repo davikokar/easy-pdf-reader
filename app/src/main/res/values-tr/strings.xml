@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Easy PDF Reader</string>
+    <string name="menu_open">Belge aç</string>
+    <string name="menu_go_to_page">Sayfaya git</string>
+    <string name="menu_search">Ara</string>
+    <string name="menu_share">Paylaş</string>
+    <string name="menu_close">Belgeyi kapat</string>
+    <string name="empty_state_text">Açık belge yok. Bir PDF açmak için buraya dokunun veya menüyü kullanın.</string>
+    <string name="error_loading_pdf">PDF belgesi yüklenemedi.</string>
+    <string name="pdf_loaded_message">PDF yüklendi: %1$d sayfa</string>
+    <string name="error_invalid_page">Lütfen geçerli bir sayfa numarası girin (1-%1$d).</string>
+    <string name="loading_document">Belge yükleniyor…</string>
+    <string name="share_title">PDF\'yi paylaş</string>
+    <string name="error_no_share_target">PDF\'yi paylaşacak uygulama bulunamadı.</string>
+    <string name="error_invalid_uri">Seçilen dosya açılamıyor.</string>
+    <string name="error_title">Hata</string>
+    <string name="action_ok">Tamam</string>
+    <string name="action_go">Git</string>
+    <string name="action_cancel">İptal</string>
+    <string name="cd_back">Geri</string>
+    <string name="support_email_subject">Easy PDF Reader destek talebi</string>
+    <string name="error_no_email_app">E-posta uygulaması bulunamadı</string>
+    <string name="menu_settings">Ayarlar</string>
+    <string name="settings_title">Ayarlar</string>
+    <string name="settings_general">Genel</string>
+    <string name="settings_change_language">Dili değiştir</string>
+    <string name="language_system_default">Sistem varsayılanı</string>
+    <string name="settings_app">Uygulama</string>
+    <string name="settings_share_app">Uygulamayı paylaş</string>
+    <string name="share_app_text">Easy PDF Reader\'a göz at: https://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="settings_rate_app">Uygulamayı değerlendir</string>
+    <string name="settings_customer_support">Müşteri Desteği</string>
+    <string name="settings_about">Hakkında</string>
+    <string name="about_version">Sürüm %1$s</string>
+    <string name="settings_community_support">Topluluk ve Destek</string>
+    <string name="settings_buy_coffee">Bana bir kahve ısmarla</string>
+    <string name="billing_thanks">Desteğiniz için çok teşekkürler! ☕</string>
+    <string name="billing_unavailable">Satın alma işlemleri şu anda kullanılamıyor. Lütfen daha sonra tekrar deneyin.</string>
+    <string name="settings_legal">Yasal</string>
+    <string name="settings_privacy">Gizlilik ve Politika</string>
+    <string name="settings_terms">Koşullar</string>
+</resources>

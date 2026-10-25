@@ -18,7 +18,8 @@ object LocaleHelper {
 
     /** BCP-47 language tags the app ships translations for. Empty tag = follow the system. */
     val supportedLanguageTags: List<String> = listOf(
-        "en", "de", "es", "fr", "it", "pt-BR", "ar", "ko", "ja", "zh-CN"
+        "en", "de", "es", "fr", "it", "pt-BR", "ar", "ko", "ja", "zh-CN",
+        "id", "vi", "th", "ro", "pl", "uk", "tr"
     )
 
     fun getPersistedLanguageTag(context: Context): String {

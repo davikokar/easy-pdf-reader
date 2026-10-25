@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Easy PDF Reader</string>
+    <string name="menu_open">Відкрити документ</string>
+    <string name="menu_go_to_page">Перейти до сторінки</string>
+    <string name="menu_search">Пошук</string>
+    <string name="menu_share">Поділитися</string>
+    <string name="menu_close">Закрити документ</string>
+    <string name="empty_state_text">Немає відкритого документа. Торкніться тут або скористайтеся меню, щоб відкрити PDF.</string>
+    <string name="error_loading_pdf">Не вдалося завантажити PDF-документ.</string>
+    <string name="pdf_loaded_message">PDF завантажено: %1$d стор.</string>
+    <string name="error_invalid_page">Введіть дійсний номер сторінки (1-%1$d).</string>
+    <string name="loading_document">Завантаження документа…</string>
+    <string name="share_title">Поділитися PDF</string>
+    <string name="error_no_share_target">Не знайдено застосунку, щоб поділитися PDF.</string>
+    <string name="error_invalid_uri">Не вдалося відкрити вибраний файл.</string>
+    <string name="error_title">Помилка</string>
+    <string name="action_ok">OK</string>
+    <string name="action_go">Перейти</string>
+    <string name="action_cancel">Скасувати</string>
+    <string name="cd_back">Назад</string>
+    <string name="support_email_subject">Запит у підтримку Easy PDF Reader</string>
+    <string name="error_no_email_app">Не знайдено поштового застосунку</string>
+    <string name="menu_settings">Налаштування</string>
+    <string name="settings_title">Налаштування</string>
+    <string name="settings_general">Загальні</string>
+    <string name="settings_change_language">Змінити мову</string>
+    <string name="language_system_default">Системна за замовчуванням</string>
+    <string name="settings_app">Застосунок</string>
+    <string name="settings_share_app">Поділитися застосунком</string>
+    <string name="share_app_text">Спробуйте Easy PDF Reader: https://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="settings_rate_app">Оцінити застосунок</string>
+    <string name="settings_customer_support">Підтримка клієнтів</string>
+    <string name="settings_about">Про застосунок</string>
+    <string name="about_version">Версія %1$s</string>
+    <string name="settings_community_support">Спільнота та підтримка</string>
+    <string name="settings_buy_coffee">Пригостити мене кавою</string>
+    <string name="billing_thanks">Щиро дякую за підтримку! ☕</string>
+    <string name="billing_unavailable">Покупки зараз недоступні. Спробуйте пізніше.</string>
+    <string name="settings_legal">Правова інформація</string>
+    <string name="settings_privacy">Конфіденційність і політика</string>
+    <string name="settings_terms">Умови</string>
+</resources>

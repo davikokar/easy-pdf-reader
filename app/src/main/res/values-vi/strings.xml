@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Easy PDF Reader</string>
+    <string name="menu_open">Mở tài liệu</string>
+    <string name="menu_go_to_page">Đến trang</string>
+    <string name="menu_search">Tìm kiếm</string>
+    <string name="menu_share">Chia sẻ</string>
+    <string name="menu_close">Đóng tài liệu</string>
+    <string name="empty_state_text">Chưa mở tài liệu nào. Chạm vào đây hoặc dùng menu để mở tệp PDF.</string>
+    <string name="error_loading_pdf">Không thể tải tài liệu PDF.</string>
+    <string name="pdf_loaded_message">Đã tải PDF: %1$d trang</string>
+    <string name="error_invalid_page">Vui lòng nhập số trang hợp lệ (1-%1$d).</string>
+    <string name="loading_document">Đang tải tài liệu…</string>
+    <string name="share_title">Chia sẻ PDF</string>
+    <string name="error_no_share_target">Không tìm thấy ứng dụng để chia sẻ PDF.</string>
+    <string name="error_invalid_uri">Không thể mở tệp đã chọn.</string>
+    <string name="error_title">Lỗi</string>
+    <string name="action_ok">OK</string>
+    <string name="action_go">Đi</string>
+    <string name="action_cancel">Hủy</string>
+    <string name="cd_back">Quay lại</string>
+    <string name="support_email_subject">Yêu cầu hỗ trợ Easy PDF Reader</string>
+    <string name="error_no_email_app">Không tìm thấy ứng dụng email</string>
+    <string name="menu_settings">Cài đặt</string>
+    <string name="settings_title">Cài đặt</string>
+    <string name="settings_general">Chung</string>
+    <string name="settings_change_language">Đổi ngôn ngữ</string>
+    <string name="language_system_default">Mặc định của hệ thống</string>
+    <string name="settings_app">Ứng dụng</string>
+    <string name="settings_share_app">Chia sẻ ứng dụng</string>
+    <string name="share_app_text">Hãy thử Easy PDF Reader: https://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="settings_rate_app">Đánh giá ứng dụng</string>
+    <string name="settings_customer_support">Hỗ trợ khách hàng</string>
+    <string name="settings_about">Giới thiệu</string>
+    <string name="about_version">Phiên bản %1$s</string>
+    <string name="settings_community_support">Cộng đồng &amp; Hỗ trợ</string>
+    <string name="settings_buy_coffee">Mời tôi một ly cà phê</string>
+    <string name="billing_thanks">Cảm ơn bạn rất nhiều vì đã ủng hộ! ☕</string>
+    <string name="billing_unavailable">Hiện không thể mua hàng. Vui lòng thử lại sau.</string>
+    <string name="settings_legal">Pháp lý</string>
+    <string name="settings_privacy">Quyền riêng tư &amp; Chính sách</string>
+    <string name="settings_terms">Điều khoản</string>
+</resources>

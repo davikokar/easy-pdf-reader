@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Easy PDF Reader</string>
+    <string name="menu_open">Otwórz dokument</string>
+    <string name="menu_go_to_page">Przejdź do strony</string>
+    <string name="menu_search">Szukaj</string>
+    <string name="menu_share">Udostępnij</string>
+    <string name="menu_close">Zamknij dokument</string>
+    <string name="empty_state_text">Brak otwartego dokumentu. Dotknij tutaj lub użyj menu, aby otworzyć plik PDF.</string>
+    <string name="error_loading_pdf">Nie udało się wczytać dokumentu PDF.</string>
+    <string name="pdf_loaded_message">Wczytano PDF: %1$d str.</string>
+    <string name="error_invalid_page">Wpisz prawidłowy numer strony (1-%1$d).</string>
+    <string name="loading_document">Wczytywanie dokumentu…</string>
+    <string name="share_title">Udostępnij PDF</string>
+    <string name="error_no_share_target">Nie znaleziono aplikacji do udostępnienia pliku PDF.</string>
+    <string name="error_invalid_uri">Nie można otworzyć wybranego pliku.</string>
+    <string name="error_title">Błąd</string>
+    <string name="action_ok">OK</string>
+    <string name="action_go">Idź</string>
+    <string name="action_cancel">Anuluj</string>
+    <string name="cd_back">Wstecz</string>
+    <string name="support_email_subject">Prośba o pomoc – Easy PDF Reader</string>
+    <string name="error_no_email_app">Nie znaleziono aplikacji e-mail</string>
+    <string name="menu_settings">Ustawienia</string>
+    <string name="settings_title">Ustawienia</string>
+    <string name="settings_general">Ogólne</string>
+    <string name="settings_change_language">Zmień język</string>
+    <string name="language_system_default">Domyślny systemu</string>
+    <string name="settings_app">Aplikacja</string>
+    <string name="settings_share_app">Udostępnij aplikację</string>
+    <string name="share_app_text">Sprawdź Easy PDF Reader: https://play.google.com/store/apps/details?id=%1$s</string>
+    <string name="settings_rate_app">Oceń aplikację</string>
+    <string name="settings_customer_support">Obsługa klienta</string>
+    <string name="settings_about">O aplikacji</string>
+    <string name="about_version">Wersja %1$s</string>
+    <string name="settings_community_support">Społeczność i pomoc</string>
+    <string name="settings_buy_coffee">Postaw mi kawę</string>
+    <string name="billing_thanks">Dziękuję bardzo za wsparcie! ☕</string>
+    <string name="billing_unavailable">Zakupy są obecnie niedostępne. Spróbuj ponownie później.</string>
+    <string name="settings_legal">Informacje prawne</string>
+    <string name="settings_privacy">Prywatność i zasady</string>
+    <string name="settings_terms">Warunki</string>
+</resources>
